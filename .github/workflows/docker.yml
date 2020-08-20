@@ -14,7 +14,7 @@ jobs:
     steps:
     
     - name: 7.2-git-auto1
-      run: ls -al ./
+      run: ls -al ./ && pwd && ls -al /home/runner/work/docker-php-nginx
     - name: 7.2-git-auto
       uses: docker/build-push-action@v1.1.0
       with:
@@ -27,8 +27,8 @@ jobs:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags: 7.2-git-auto
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
-        path: ./dockerfile
-        dockerfile: ./dockerfile/Dockerfile
+        #path: ./dockerfile
+        #dockerfile: ./dockerfile/Dockerfile
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
