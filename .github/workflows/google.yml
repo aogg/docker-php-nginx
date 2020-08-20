@@ -1,0 +1,42 @@
+
+name: 构建和提交docker
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  GKE_CLUSTER: cluster-1    # TODO: update to cluster name
+  GKE_ZONE: us-central1-c   # TODO: update to cluster zone
+  DEPLOYMENT_NAME: gke-test # TODO: update to deployment name
+  IMAGE: static-site
+
+jobs:
+  setup-build-publish:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: 7.2-git-auto
+      uses: docker/build-push-action@v1.1.0
+      with:
+        # Username used to log in to a Docker registry. If not set then no login will occur
+        username: adockero
+        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
+        password: ${{ secrets.GKE_PROJECT }}
+        # Docker repository to tag the image with
+        repository: adockero/php-nginx
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags: 7.2-git-auto
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        dockerfile: '{path}/Dockerfile.git-auto'
+        # Always attempt to pull a newer version of the image
+        always_pull: true
+        # Comma-delimited list of build-time variables
+        # build_args: arg1=value1,arg2=value2
+        # Adds labels with git repository information to the built image
+        add_git_labels: true
+
