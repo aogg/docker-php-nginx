@@ -9,6 +9,7 @@ fi
 
 GIT_URL=$1
 GIT_BRANCH=${2:-'master'}
+GIT_DIR=${3:-/app}
 SSH_KEY=${3}
 SSH_FILE_NAME=${4:-id_rsa}
 
@@ -44,6 +45,7 @@ fi
 
 # 正式git代码
 
+cd $GIT_DIR
 git init || ls .git
 git remote rm origin || echo '删除原有分支';
 git remote add origin $GIT_URL;
