@@ -14,8 +14,8 @@ jobs:
     steps:
     
     - name: Checkout
-        # 使用action库  actions/checkout获取源码
-        uses: actions/checkout@v2.3.2
+      # 使用action库  actions/checkout获取源码
+      uses: actions/checkout@v2.3.2
     - name: 7.2-git-auto
       uses: docker/build-push-action@v1.1.0
       with:
