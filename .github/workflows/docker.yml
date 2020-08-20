@@ -9,7 +9,6 @@ on:
 
 jobs:
   setup-build-publish:
-    name: 构建和推送docker镜像
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +25,7 @@ jobs:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags: 7.2-git-auto
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
-        dockerfile: Dockerfile.git-auto
+        dockerfile: LICENSE
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
