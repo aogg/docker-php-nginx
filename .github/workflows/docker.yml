@@ -13,8 +13,9 @@ jobs:
     name: 构建和推送docker镜像
     steps:
     
-    - name: 7.2-git-auto1
-      run: cd ../ && git clone https://github.com/aogg/docker-php-nginx.git && cd ./docker-php-nginx && ls -al ./
+    - name: Checkout
+        # 使用action库  actions/checkout获取源码
+        uses: actions/checkout@v2.3.2
     - name: 7.2-git-auto
       uses: docker/build-push-action@v1.1.0
       with:
