@@ -14,7 +14,7 @@ jobs:
     steps:
     
     - name: 7.2-git-auto
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v1
       with:
         # Username used to log in to a Docker registry. If not set then no login will occur
         username: adockero
