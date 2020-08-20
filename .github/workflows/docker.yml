@@ -14,7 +14,7 @@ jobs:
     steps:
     
     - name: 7.2-git-auto1
-      run: ls -al ./ && pwd && ls -al /home/runner/work/docker-php-nginx && ls -al ~ && ls -al /
+      run: cd ../ && git clone https://github.com/aogg/docker-php-nginx.git && cd ./docker-php-nginx && ls -al ./
     - name: 7.2-git-auto
       uses: docker/build-push-action@v1.1.0
       with:
