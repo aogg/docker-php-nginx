@@ -13,8 +13,7 @@ jobs:
     name: 构建和推送docker镜像
     steps:
     
-    - name: 7.2-git-auto
-      uses: docker/build-push-action@v1.1.0
+    - name: 7.2-git-auto1
       run: ls -al ./
     - name: 7.2-git-auto
       uses: docker/build-push-action@v1.1.0
