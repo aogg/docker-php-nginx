@@ -1,4 +1,8 @@
 # docker-php-nginx
+
+[![对应容器](http://dockeri.co/image/adockero/php-nginx)](https://hub.docker.com/r/adockero/php-nginx)
+
+
 php-nginx image based on [webdevops/php-nginx](https://hub.docker.com/r/webdevops/php-nginx) (Contains mysql.so php extensions) （如：增加mysql.so，支持旧框架）
 
 > 1、基础镜像[webdevops/php-nginx](https://dockerfile.readthedocs.io/en/latest/content/DockerImages/dockerfiles/php-nginx.html)官方文档  
