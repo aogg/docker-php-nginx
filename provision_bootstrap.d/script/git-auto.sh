@@ -18,7 +18,7 @@ SSH_FILE_NAME=${4:-id_rsa}
 if [[ -n "$SSH_KEY" && (! -f ~/.ssh/$SSH_FILE_NAME) ]]; then
     mkdir -p ~/.ssh/
     echo "SSH_KEY of type $SSH_FILE_NAME provided"
-    echo $SSH_KEY | base64 -d -i > ~/.ssh/$SSH_FILE_NAME
+    echo "$SSH_KEY" | base64 -d -i > ~/.ssh/$SSH_FILE_NAME
 fi
 
 # Accept key for SSH
