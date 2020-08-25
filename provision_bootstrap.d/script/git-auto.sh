@@ -10,8 +10,8 @@ fi
 GIT_URL=$1
 GIT_BRANCH=${2:-'master'}
 GIT_DIR=${3:-/app}
-SSH_KEY=${3}
-SSH_FILE_NAME=${4:-id_rsa}
+SSH_KEY=${4}
+SSH_FILE_NAME=${5:-id_rsa}
 
 # ssh的yes处理
 # @see https://github.com/CoRfr/docker-git-autoupdate/blob/master/entrypoint.sh
