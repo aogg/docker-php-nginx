@@ -45,7 +45,7 @@ fi
 
 
 # 正式git代码
-echo '正式更新代码' date;
+echo '正式更新代码' `date`;
 
 cd $GIT_DIR
 git init || ls .git
