@@ -2,9 +2,16 @@
 
 
 if [ -z $1 ];then
+    echo 'git地址不存在';
     exit;
 fi
 
+# 检测是否有其他git命令在更新
+git_num=cat /proc/*/cmdline |grep -a 'git-auto.sh' | wc -l;
+if [[ git_num > 1 ]];then
+    echo '检测有其他git命令在更新';
+    exit;
+fi
 
 
 GIT_URL=$1
