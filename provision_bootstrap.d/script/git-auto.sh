@@ -15,7 +15,7 @@ SSH_FILE_NAME=${4:-id_rsa}
 
 # ssh的yes处理
 # @see https://github.com/CoRfr/docker-git-autoupdate/blob/master/entrypoint.sh
-if [ -n "$SSH_KEY" ]; then
+if [[ -n "$SSH_KEY" && (! -f ~/.ssh/$SSH_FILE_NAME) ]]; then
     mkdir -p ~/.ssh/
     echo "SSH_KEY of type $SSH_FILE_NAME provided"
     echo $SSH_KEY | base64 -d -i > ~/.ssh/$SSH_FILE_NAME
@@ -35,7 +35,7 @@ elif echo $GIT_URL | grep "git@"; then
     ssh_port=22
 fi
 
-if [ -n "$ssh_host" ]; then
+if [[ -n "$ssh_host" && (! -f ~/.ssh/known_hosts) ]]; then
     echo "Scanning $ssh_host $ssh_port"
     ssh_keyscan=$(ssh-keyscan -p $ssh_port $ssh_host 2>/dev/null)
     echo $ssh_keyscan > ~/.ssh/known_hosts
@@ -44,6 +44,7 @@ fi
 
 
 # 正式git代码
+echo '正式更新代码' date;
 
 cd $GIT_DIR
 git init || ls .git
