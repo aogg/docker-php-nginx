@@ -20,6 +20,7 @@ if [[ -n "$SSH_KEY" && (! -f ~/.ssh/$SSH_FILE_NAME) ]]; then
     echo "SSH_KEY of type $SSH_FILE_NAME provided"
     echo "$SSH_KEY" | base64 -d -i > ~/.ssh/$SSH_FILE_NAME
 fi
+chmod 700 ~/.ssh/$SSH_FILE_NAME
 
 # Accept key for SSH
 if echo $GIT_URL | grep "ssh://"; then
