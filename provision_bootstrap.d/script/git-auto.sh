@@ -50,10 +50,13 @@ echo '正式更新代码' `date`;
 
 cd $GIT_DIR
 git init || ls .git
-git remote rm origin || echo '删除原有分支';
+git remote rm origin || echo '删除原有分支报错';
 git remote add origin $GIT_URL;
 git fetch origin || git clone -b $GIT_BRANCH ${GIT_URL} . || echo '克隆代码';
+# 还原
 git checkout . || echo 'checkout'
-git reset --hard origin/$GIT_BRANCH || echo '还原代码'
-git branch -f $GIT_BRANCH || git checkout $GIT_BRANCH
+git reset --hard origin/$GIT_BRANCH || echo '还原代码报错'
+# 更新代码
 git pull -f origin $GIT_BRANCH
+git checkout -B production production || echo '更新代码失败';
+
