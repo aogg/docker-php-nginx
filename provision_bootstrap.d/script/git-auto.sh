@@ -58,5 +58,5 @@ git checkout . || echo 'checkout'
 git reset --hard origin/$GIT_BRANCH || echo '还原代码报错'
 # 更新代码
 git pull -f origin $GIT_BRANCH
-git checkout -B production production || echo '更新代码失败';
+git checkout -B $GIT_BRANCH $GIT_BRANCH || echo '更新代码失败';
 
