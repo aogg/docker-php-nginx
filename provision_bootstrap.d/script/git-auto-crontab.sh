@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # 检测是否有其他git命令在更新
-git_num=cat /proc/*/cmdline |grep -a 'git-auto.sh' | wc -l;
-if [[ git_num > 2 ]];then
+git_num=`cat /proc/*/cmdline |grep -a 'git-auto.sh' | wc -l`;
+if [[ $git_num > 2 ]];then
     echo '检测有其他git命令在更新, '$git_num;
     exit;
 fi
