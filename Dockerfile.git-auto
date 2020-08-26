@@ -7,4 +7,3 @@ COPY ./provision_bootstrap.d/script/git-auto-crontab.sh /opt/docker/provision/bo
 
 COPY ./provision_entrypoint.d/docker-run-bootstrap.sh /opt/docker/provision/entrypoint.d/docker-run-bootstrap.sh
 
-RUN pwd && ls -al && ls -al /opt/docker/provision/bootstrap.d/script/git-auto.sh && cat /opt/docker/provision/bootstrap.d/script/git-auto.sh
