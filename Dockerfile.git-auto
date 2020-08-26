@@ -1,9 +1,10 @@
 ARG FROM_ARG=webdevops/php:7.2
 FROM $FROM_ARG
 
-RUN pwd && ls -al && ls -al ./provision_bootstrap.d/script/&& cat ./provision_bootstrap.d/script/git-auto.sh
 COPY ./provision_bootstrap.d/cron-git-auto.sh /opt/docker/provision/bootstrap.d/cron-git-auto.sh
 COPY ./provision_bootstrap.d/script/git-auto.sh /opt/docker/provision/bootstrap.d/script/git-auto.sh
 COPY ./provision_bootstrap.d/script/git-auto-crontab.sh /opt/docker/provision/bootstrap.d/script/git-auto-crontab.sh
 
 COPY ./provision_entrypoint.d/docker-run-bootstrap.sh /opt/docker/provision/entrypoint.d/docker-run-bootstrap.sh
+
+RUN pwd && ls -al && ls -al /opt/docker/provision/bootstrap.d/script/git-auto.sh && cat /opt/docker/provision/bootstrap.d/script/git-auto.sh
