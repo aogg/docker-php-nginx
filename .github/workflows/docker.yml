@@ -83,7 +83,7 @@ jobs:
         # Docker repository to tag the image with
         repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.2-lua-alpine
+        tags: 7.2-dev-lua-alpine
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
         dockerfile: Dockerfile.lua
@@ -111,7 +111,7 @@ jobs:
         # Docker repository to tag the image with
         repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.2-lua
+        tags: 7.2-dev-lua
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
         dockerfile: Dockerfile.lua
@@ -163,7 +163,7 @@ jobs:
         # Docker repository to tag the image with
         repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.2-lua-host-dir
+        tags: 7.2-dev-lua-host-dir
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
         dockerfile: Dockerfile.lua-host-dir
