@@ -5,7 +5,7 @@ FROM webdevops/php-nginx:${TAG}
 
 
 RUN set -x \
-    if [ -n "$(which apt)" ];then \
+    && if [ -n "$(which apt)" ];then \
       apt-get update; \ 
       apt-get install -y --no-install-recommends libnginx-mod-http-lua; \     
       rm -rf /var/lib/apt/lists/*; \
