@@ -1,6 +1,6 @@
-ARG TAG=latest
+ARG TAG="php-nginx:latest"
 #FROM webdevops/php:${TAG}
-FROM webdevops/php-nginx:${TAG}
+FROM webdevops/${TAG}
 
 
 
