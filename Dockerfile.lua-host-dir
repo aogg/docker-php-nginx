@@ -1,5 +1,5 @@
-#ARG TAG=latest
+ARG TAG=latest
 #FROM webdevops/php:${TAG}
-FROM adockero/php-nginx:7.2-lua
+FROM adockero/php-nginx:${TAG}
 
 COPY ./nginx-conf.d/lua.host.dir.conf /etc/nginx/conf.d/lua.host.dir.conf
