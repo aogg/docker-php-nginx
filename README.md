@@ -43,7 +43,7 @@ docker run -d --restart=always -e WEB_DOCUMENT_ROOT=/app/public --name php-nginx
 ```
 
 
-# 7.2-dev-lua-host-dir
+# 7.2-dev-lua-host-dir（支持xip.io）
 1、**curl http://local_dir.local_name.thinkphp.169.254.208.1.xip.io**
 
 ```bash
