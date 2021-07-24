@@ -7,6 +7,5 @@ COPY ./nginx-conf.d/11-location-thinkphp.conf /opt/docker/etc/nginx/vhost.framew
 COPY ./nginx-conf.d/10-php-server_name_host.conf /opt/docker/etc/nginx/vhost.common.d/10-php.conf
 
 
-COPY ./provision_bootstrap.d/open_ssh_pwd.sh  /opt/docker/provision/bootstrap.d/open_ssh_pwd.sh
 
-COPY ./provision_entrypoint.d/ssh_pwd.sh /opt/docker/provision/entrypoint.d/ssh_pwd.sh
+COPY ./service.d/ssh.d/11-open-ssh-pwd.sh /opt/docker/bin/service.d/ssh.d/11-open-ssh-pwd.sh
