@@ -14,5 +14,7 @@ RUN set -x \
     fi
 
 
-COPY ./nginx-conf.d/nginx-lua.conf /opt/docker/etc/nginx/nginx.conf    
+COPY ./nginx-conf.d/nginx-lua.conf /opt/docker/etc/nginx/nginx.conf   
+# 下面才是正确的    
+COPY ./nginx-conf.d/nginx-lua.conf /etc/nginx/nginx.conf    
     
