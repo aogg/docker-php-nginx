@@ -44,7 +44,8 @@ docker run -d --restart=always -e WEB_DOCUMENT_ROOT=/app/public --name php-nginx
 
 
 # 7.2-dev-lua-host-dir, 7.4-dev-lua-host-dir（支持xip.io, sslip.io）
-1、**curl http://local_dir.local_name.thinkphp.169.254.208.1.sslip.io**
+1、**curl http://local_dir.local_name.thinkphp.169.254.208.1.sslip.io**  
+2、url名称对应文件夹名称，url只支持小写和下划线，所以文件夹也只支持小写和下划线  
 
 ```bash
 docker run -d --restart=always --name dev-php-lua-host \
