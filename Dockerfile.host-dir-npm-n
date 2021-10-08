@@ -1,5 +1,5 @@
-ARG TAG=latest
-FROM adockero/php-nginx:${TAG}
+ARG FROM_ARG=adockero/php-nginx:latest
+FROM ${FROM_ARG}
 
 # npm-n可以自定义node版本   n use [版本]
 RUN set -x \
