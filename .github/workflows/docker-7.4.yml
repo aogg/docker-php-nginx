@@ -5,7 +5,10 @@ on:
   push:
     branches:
       - master
-
+    paths: 
+      - "./**"
+      - "!.github/workflows/*.yml"
+      - ".github/workflows/docker-7.4.yml"
 
 jobs:
   setup-build-publish:
@@ -200,7 +203,7 @@ jobs:
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: TAG=adockero/php-nginx:7.4-dev-lua-host-dir
+        build_args: FROM_ARG=adockero/php-nginx:7.4-dev-lua-host-dir
         # Adds labels with git repository information to the built image
         add_git_labels: true
 
@@ -224,7 +227,7 @@ jobs:
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: TAG=webdevops/php:7.4-alpine
+        build_args: FROM_ARG=webdevops/php:7.4-alpine
         # Adds labels with git repository information to the built image
         add_git_labels: true
 
