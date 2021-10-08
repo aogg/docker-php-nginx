@@ -5,6 +5,10 @@ on:
   push:
     branches:
       - master
+    paths: 
+      - "./**"
+      - "!.github/workflows/*.yml"
+      - ".github/workflows/docker.yml"
 
 
 jobs:
