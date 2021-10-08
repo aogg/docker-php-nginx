@@ -24,6 +24,8 @@ jobs:
       uses: actions/checkout@v2.3.2
 
 
+# ----------------lua基础start---------------------
+
 
     - name: 7.4-lua-alpine
       uses: docker/build-push-action@v1.1.0
@@ -124,7 +126,7 @@ jobs:
 
 
 
-# ----------------lua基础---------------------
+# ----------------lua基础end---------------------
 
 
 
@@ -177,7 +179,7 @@ jobs:
 
 
 
-# ----------------host-node---------------------
+# ----------------host-node--start---------------------
 
 
 
@@ -198,8 +200,33 @@ jobs:
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: TAG=7.4-dev-lua-host-dir
+        build_args: TAG=adockero/php-nginx:7.4-dev-lua-host-dir
         # Adds labels with git repository information to the built image
         add_git_labels: true
 
 
+
+
+    - name: 7.4-php-alpine-npm-n
+      uses: docker/build-push-action@v1.1.0
+      with:
+        # Username used to log in to a Docker registry. If not set then no login will occur
+        username: adockero
+        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
+        password: ${{ secrets.PASSWORD }}
+        # Docker repository to tag the image with
+        repository: adockero/php-nginx
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags: 7.4-php-alpine-npm-n
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        # path: ./dockerfile
+        dockerfile: Dockerfile.host-dir-npm-n
+        # Always attempt to pull a newer version of the image
+        always_pull: true
+        # Comma-delimited list of build-time variables
+        build_args: TAG=webdevops/php:7.4-alpine
+        # Adds labels with git repository information to the built image
+        add_git_labels: true
+
+
+# ----------------host-node--end---------------------
