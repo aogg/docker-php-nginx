@@ -2,14 +2,5 @@ ARG FROM_ARG=adockero/php-nginx:latest
 FROM ${FROM_ARG}
 
 # npm-n可以自定义node版本   n use [版本]
-RUN set -x \
-    && if [ -n "$(which apt)" ]; then \
-      apt-get update; \ 
-      apt-get install -y --no-install-recommends npm; \     
-      rm -rf /var/lib/apt/lists/*; \
-    elif [ -n "$(which apk)" ]; then \
-      apk add --no-cache npm; \
-    fi; \
-    npm install n -g;\
-    n lts;
+COPY ./provision-build.d/install-npm.sh /opt/docker/provision/local-build.d/install-npm.sh
 
