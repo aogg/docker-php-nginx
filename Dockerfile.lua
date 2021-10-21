@@ -1,6 +1,6 @@
 ARG TAG="php-nginx:latest"
 #FROM webdevops/php:${TAG}
-FROM webdevops/${TAG}
+FROM adockero/${TAG}
 
 
 
