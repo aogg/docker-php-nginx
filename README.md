@@ -8,6 +8,7 @@ php-nginx image based on [webdevops/php-nginx](https://hub.docker.com/r/webdevop
 > 1、基础镜像[webdevops/php-nginx](https://dockerfile.readthedocs.io/en/latest/content/DockerImages/dockerfiles/php-nginx.html)官方文档  
 > 2、php镜像也可以参考官方文档：[webdevops/php](https://dockerfile.readthedocs.io/en/latest/content/DockerImages/dockerfiles/php.html)  
 > 3、大部分都是nginx和fpm在一个容器内的镜像
+> 4、7.4-php这类标签是只有php没有nginx的镜像，不特定标识php都是php+nginx
 
 
 
