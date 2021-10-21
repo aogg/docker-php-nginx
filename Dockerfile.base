@@ -8,4 +8,4 @@ COPY ./script/docker-build-dir.sh /opt/docker/bin/usr-bin/docker-build-dir.sh
 
 
 ONBUILD ARG BUILD_SCRIPT_ARG=''
-ONBUILD RUN /opt/docker/bin/usr-bin/docker-build-dir.sh /opt/docker/provision/local-build.d ${BUILD_SCRIPT_ARG}
+ONBUILD RUN bash /opt/docker/bin/usr-bin/docker-build-dir.sh /opt/docker/provision/local-build.d ${BUILD_SCRIPT_ARG}
