@@ -1,3 +1,7 @@
-FROM webdevops/php-nginx:7.2
+# FROM webdevops/php-nginx:7.2
+ARG FROM_IMAGE="webdevops/php-nginx:7.2"
+ARG THINK_CONF="10-location-thinkphp.conf"
 
-COPY ./nginx-conf.d/10-location-thinkphp.conf /opt/docker/etc/nginx/vhost.common.d/10-location-root.conf
+FROM ${FROM_IMAGE}
+
+COPY ./nginx-conf.d/${THINK_CONF} /opt/docker/etc/nginx/vhost.common.d/10-location-root.conf
