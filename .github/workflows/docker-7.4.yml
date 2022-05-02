@@ -148,7 +148,7 @@ jobs:
 # ----------------常规使用start---------------------
 
 
-    - name: thinkphp
+    - name: 7.4-alpine-thinkphp5
       uses: docker/build-push-action@v1.1.0
       with:
         # Username used to log in to a Docker registry. If not set then no login will occur
