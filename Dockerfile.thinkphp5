@@ -2,4 +2,4 @@ ARG BASE_FORM=webdevops/php-nginx:7.2
 
 FROM ${BASE_FORM}
 
-COPY ./nginx-conf.d/11-location-thinkphp5.conf /opt/docker/etc/nginx/vhost.common.d/10-location-root.conf
+COPY ./nginx-conf.d/12-location-thinkphp5.conf /opt/docker/etc/nginx/vhost.common.d/10-location-root.conf
