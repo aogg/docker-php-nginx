@@ -1,6 +1,6 @@
-# FROM webdevops/php-nginx:7.2
-ARG FROM_ARG="webdevops/php-nginx:7.2"
-ARG THINK_CONF="10-location-thinkphp.conf"
+
+ARG FROM_ARG=webdevops/php-nginx:7.2
+ARG THINK_CONF=10-location-thinkphp.conf
 
 FROM ${FROM_ARG}
 
