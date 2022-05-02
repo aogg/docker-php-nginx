@@ -6,6 +6,7 @@ on:
     branches:
       - master
     paths: 
+      - "./*"
       - "./**"
       - "!.github/workflows/*.yml"
       - ".github/workflows/docker.yml"
@@ -180,7 +181,7 @@ jobs:
 
 
 
-    - name: thinkphp
+    - name: 7.2-thinkphp6
       uses: docker/build-push-action@v1.1.0
       with:
         # Username used to log in to a Docker registry. If not set then no login will occur
