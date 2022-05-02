@@ -187,7 +187,7 @@ jobs:
         # Docker repository to tag the image with
         repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.4-alpine-thinkphp5
+        tags: 7.4-alpine-nginx-thinkphp5
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
         dockerfile: Dockerfile.thinkphp5
