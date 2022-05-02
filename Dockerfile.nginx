@@ -1,0 +1,4 @@
+ARG FROM_ARG=webdevops/php:latest
+FROM ${FROM_ARG}
+
+COPY ./nginx-conf.d/08-location-static.conf /opt/docker/etc/nginx/vhost.common.d/08-location-static.conf
