@@ -4,10 +4,9 @@ FROM ${FROM_ARG}
 ENV RUN_EVAL_ENV=''
 
 # 基础
-COPY ./docker_entrypoint.d/localtime.sh /opt/docker/bin/entrypoint.d/localtime.sh
-
-
+COPY ./service.d/supervisor.d/localtime.sh /opt/docker/bin/service.d/supervisor.d/localtime.sh
 COPY ./service.d/supervisor.d/run-eval-env.sh /opt/docker/bin/service.d/supervisor.d/run-eval-env.sh
+
 
 COPY ./provision-build.d/ /opt/docker/provision/local-build.d
 COPY ./script/docker-build-dir.sh /opt/docker/bin/usr-bin/docker-build-dir.sh
