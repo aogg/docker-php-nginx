@@ -2,9 +2,12 @@ ARG BASE_FORM=adockero/php-nginx:7.4-php-alpine
 
 FROM ${BASE_FORM}
 
+ENV SERVICE_SUPERVISOR_OPTS='' \
+    SERVICE_SUPERVISOR_USER=''
+
 COPY ./bin/entrypoint.d/local-supervisord.sh /opt/docker/bin/entrypoint.d/local-supervisord.sh
 COPY ./script/local-supervisord/local-supervisor.conf /opt/docker/etc/local-supervisor.conf
 COPY ./script/local-supervisord/local-supervisor.d /opt/docker/etc/local-supervisor.d
 
 
-CMD [ "local-supervisord" ];
+CMD [ "local-supervisord" ]
