@@ -9,3 +9,4 @@ COPY ./nginx-conf.d/10-php-server_name_host.conf /opt/docker/etc/nginx/vhost.com
 
 
 
+COPY ./service.d/ssh.d/11-open-ssh-pwd.sh /opt/docker/bin/service.d/ssh.d/11-open-ssh-pwd.sh

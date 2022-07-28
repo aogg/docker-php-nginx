@@ -1,0 +1,8 @@
+ARG FROM_ARG=adockero/php-nginx:7.4-php-supervisord-alpine
+
+FROM ${FROM_ARG}
+
+RUN docker-service enable ssh
+
+
+COPY ./service.d/ssh.d/11-open-ssh-pwd.sh /opt/docker/bin/service.d/ssh.d/11-open-ssh-pwd.sh
