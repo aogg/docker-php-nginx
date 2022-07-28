@@ -1,7 +1,8 @@
 ARG FROM_ARG=webdevops/php:latest
 FROM ${FROM_ARG}
 
-ENV RUN_EVAL_ENV=''
+ENV RUN_EVAL_ENV='' \
+    PHP_DATE_TIMEZONE='PRC'
 
 # 基础
 COPY ./service.d/supervisor.d/localtime.sh /opt/docker/bin/service.d/supervisor.d/localtime.sh
