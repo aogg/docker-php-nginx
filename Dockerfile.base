@@ -2,11 +2,14 @@ ARG FROM_ARG=webdevops/php:latest
 FROM ${FROM_ARG}
 
 ENV RUN_EVAL_ENV='' \
-    PHP_DATE_TIMEZONE='PRC'
+    PHP_DATE_TIMEZONE='PRC' \
+    LOCAL_USER_ENV='' \
+    LOCAL_USER_NUM_ENV=''
 
 # 基础
 COPY ./service.d/supervisor.d/localtime.sh /opt/docker/bin/service.d/supervisor.d/localtime.sh
 COPY ./service.d/supervisor.d/run-eval-env.sh /opt/docker/bin/service.d/supervisor.d/run-eval-env.sh
+COPY ./service.d/supervisor.d/local-user.sh /opt/docker/bin/service.d/supervisor.d/local-user.sh
 
 
 COPY ./provision-build.d/ /opt/docker/provision/local-build.d
