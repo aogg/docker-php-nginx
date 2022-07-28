@@ -11,7 +11,6 @@ COPY ./service.d/supervisor.d/localtime.sh /opt/docker/bin/service.d/supervisor.
 COPY ./service.d/supervisor.d/run-eval-env.sh /opt/docker/bin/service.d/supervisor.d/run-eval-env.sh
 COPY ./service.d/supervisor.d/local-user.sh /opt/docker/bin/service.d/supervisor.d/local-user.sh
 
-COPY ./service.d/ssh.d/11-open-ssh-pwd.sh /opt/docker/bin/service.d/ssh.d/11-open-ssh-pwd.sh
 
 COPY ./provision-build.d/ /opt/docker/provision/local-build.d
 COPY ./script/docker-build-dir.sh /opt/docker/bin/usr-bin/docker-build-dir.sh
