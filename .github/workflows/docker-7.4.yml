@@ -237,7 +237,7 @@ jobs:
         tags: 7.4-php-supervisord-alpine
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.loca-supervisord
+        dockerfile: Dockerfile.local-supervisord
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
