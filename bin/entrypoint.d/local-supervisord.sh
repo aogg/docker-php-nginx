@@ -18,5 +18,5 @@ supervisord -c /opt/docker/etc/supervisor.conf --logfile /dev/null --pidfile /de
 
 # 自定义
 
-supervisord -c /opt/docker/etc/local-supervisor.conf --logfile /docker.stdout --pidfile /dev/null --user "$SERVICE_SUPERVISOR_USER" $SERVICE_SUPERVISOR_OPTS
+supervisord -c /opt/docker/etc/local-supervisor.conf --logfile /dev/null --pidfile /dev/null --user "$SERVICE_SUPERVISOR_USER" $SERVICE_SUPERVISOR_OPTS
 
