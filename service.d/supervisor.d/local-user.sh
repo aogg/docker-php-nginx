@@ -3,9 +3,9 @@
 
 if [[ -n "$LOCAL_USER_ENV" ]];then
 
-    if [[ -n "$(id $LOCAL_USER_ENV)" ]];then
+    if [[ -z "$(id $LOCAL_USER_ENV)" ]];then
 
-        if [[ -n "$LOCAL_USER_NUM_ENV" ]];then
+        if [[ -z "$LOCAL_USER_NUM_ENV" ]];then
             LOCAL_USER_NUM_ENV=$LOCAL_USER_ENV;
         fi
 
