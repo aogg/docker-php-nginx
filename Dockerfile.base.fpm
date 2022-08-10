@@ -2,4 +2,4 @@ ARG FROM_ARG=webdevops/php-nginx:7.2
 
 FROM ${FROM_ARG}
 
-COPY ./provision_entrypoint.d\30-local-php-fpm.sh /opt/docker/bin/service.d/supervisor.d/local-user.sh
+COPY ./provision_entrypoint.d/30-local-php-fpm.sh /opt/docker/bin/service.d/supervisor.d/local-user.sh
