@@ -135,7 +135,7 @@ jobs:
         tags: 7.4-alpine-close-service
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.base
+        dockerfile: Dockerfile.base.close-service
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
