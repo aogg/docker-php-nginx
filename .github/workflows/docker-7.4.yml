@@ -79,7 +79,29 @@ jobs:
         add_git_labels: true
 
 
-    - name: 7.4-base-close-service
+
+    - name: 7.4-alpine-base-fpm
+      uses: docker/build-push-action@v1.1.0
+      with:
+        # Username used to log in to a Docker registry. If not set then no login will occur
+        username: adockero
+        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
+        password: ${{ secrets.PASSWORD }}
+        # Docker repository to tag the image with
+        repository: adockero/php-nginx
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags: 7.4-alpine-base-fpm
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        # path: ./dockerfile
+        dockerfile: Dockerfile.base.fpm
+        # Always attempt to pull a newer version of the image
+        always_pull: true
+        # Comma-delimited list of build-time variables
+        build_args: FROM_ARG=adockero/php-nginx:7.4-alpine
+        # Adds labels with git repository information to the built image
+        add_git_labels: true
+
+    - name: 7.4-close-service
       uses: docker/build-push-action@v1.1.0
       with:
         # Username used to log in to a Docker registry. If not set then no login will occur
@@ -100,7 +122,7 @@ jobs:
         # Adds labels with git repository information to the built image
         add_git_labels: true
 
-    - name: 7.4-alpine
+    - name: 7.4-alpine-close-service
       uses: docker/build-push-action@v1.1.0
       with:
         # Username used to log in to a Docker registry. If not set then no login will occur
@@ -117,7 +139,7 @@ jobs:
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: FROM_ARG=adockero/php-nginx:7.4-alpine
+        build_args: FROM_ARG=adockero/php-nginx:7.4-alpine-base-fpm
         # Adds labels with git repository information to the built image
         add_git_labels: true
 
@@ -548,7 +570,7 @@ jobs:
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: FROM_ARG=adockero/php-nginx:7.4-alpine,BUILD_SCRIPT_ARG=install-ffmpeg.sh;install-npm.sh
+        build_args: FROM_ARG=adockero/php-nginx:7.4-alpine-base-fpm,BUILD_SCRIPT_ARG=install-ffmpeg.sh;install-npm.sh
         # Adds labels with git repository information to the built image
         add_git_labels: true
 
