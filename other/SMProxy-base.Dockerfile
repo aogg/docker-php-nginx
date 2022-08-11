@@ -1,11 +1,14 @@
 # FROM php:7-cli-alpine
 ARG FROM_ARG="php:7-cli-alpine"
+
 FROM $FROM_ARG
+
+ARG SWOOLE_VERSION=swoole
 
 # ENV SMProxy_VERSION 1.3.1
 
 RUN apk add --no-cache --virtual .phpize-deps $PHPIZE_DEPS linux-headers \
-    && pecl install swoole \
+    && pecl install ${SWOOLE_VERSION} \
     && docker-php-ext-enable swoole \
     \
     # xBring in gettext so we can get `envsubst`, then throw

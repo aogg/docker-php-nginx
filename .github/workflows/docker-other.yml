@@ -42,7 +42,7 @@ jobs:
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: FROM_ARG=php:7-cli-alpine
+        build_args: FROM_ARG=php:7-cli-alpine,SWOOLE_VERSION=swoole-4.8.11
         # Adds labels with git repository information to the built image
         add_git_labels: true
 
