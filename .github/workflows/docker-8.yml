@@ -5,12 +5,9 @@ on:
   push:
     branches:
       - master
-#     paths: 
-#       - "/*"
-#       - "./*"
-#       - "./**"
-#       - "!.github/workflows/*.yml"
-#       - ".github/workflows/docker-7.4.yml"
+    paths: 
+      - "!.github/workflows/*.yml"
+      - ".github/workflows/docker-8.yml"
 
 jobs:
   setup-build-publish:
