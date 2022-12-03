@@ -19,7 +19,7 @@ RUN set -x \
       rm -Rf /etc/nginx; \
       mv /etc/nginx_bak /etc/nginx; \
       rm -rf /var/lib/apt/lists/*; \
-      ln -s /usr/local/openresty/nginx/sbin/nginx /usr/bin/nginx; \
+      ln -s /usr/local/openresty/nginx/sbin/nginx /usr/sbin/nginx; \
       ln -s /usr/local/openresty/nginx/conf/nginx.conf /opt/docker/etc/nginx/nginx.conf; \
     elif [ -n "$(which apk)" ]; then \
       apk add --no-cache nginx-mod-http-lua; \
