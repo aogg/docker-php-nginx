@@ -10,7 +10,7 @@ RUN set -x \
       mv /etc/nginx /etc/nginx_bak; \
       apt remove -y nginx; \
       apt-get update; \ 
-      wget -O - https://openresty.org/package/pubkey.gpg | sudo apt-key add -; \
+      wget -O - https://openresty.org/package/pubkey.gpg | apt-key add -; \
       codename=`grep -Po 'VERSION="[0-9]+ \(\K[^)]+' /etc/os-release`;\
       echo "deb http://openresty.org/package/debian $codename openresty" \
       | tee /etc/apt/sources.list.d/openresty.list;\
