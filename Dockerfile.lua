@@ -20,12 +20,13 @@ RUN set -x \
       mv /etc/nginx_bak /etc/nginx; \
       rm -rf /var/lib/apt/lists/*; \
       ln -s /usr/local/openresty/nginx/sbin/nginx /usr/bin/nginx; \
+      ln -s /usr/local/openresty/nginx/conf/nginx.conf /opt/docker/etc/nginx/nginx.conf; \
     elif [ -n "$(which apk)" ]; then \
       apk add --no-cache nginx-mod-http-lua; \
     fi
 
 
-COPY ./nginx-conf.d/nginx-lua.conf /opt/docker/etc/nginx/nginx.conf   
+COPY ./nginx-conf.d/nginx-lua.conf /opt/docker/etc/nginx/nginx.conf  
 # 下面才是正确的    
 COPY ./nginx-conf.d/nginx-lua.conf /etc/nginx/nginx.conf    
     
