@@ -9,6 +9,10 @@ RUN set -x \
     && if [ -n "$(which apt)" ]; then \
       mv /etc/nginx /etc/nginx_bak; \
       apt remove -y nginx; \
+      if [ -n "$(which nginx)" ];then \
+        # 卸载没成功
+        apt autoremove -y ;\
+      fi \
       apt-get update; \ 
       wget -O - https://openresty.org/package/pubkey.gpg | apt-key add -; \
       codename=`grep -Po 'VERSION="[0-9]+ \(\K[^)]+' /etc/os-release`;\
@@ -19,7 +23,7 @@ RUN set -x \
       rm -Rf /etc/nginx; \
       mv /etc/nginx_bak /etc/nginx; \
       rm -rf /var/lib/apt/lists/*; \
-      ln -s /usr/local/openresty/nginx/sbin/nginx /usr/sbin/nginx; \
+      ln -s -f /usr/local/openresty/nginx/sbin/nginx /usr/sbin/nginx; \
       ln -s /usr/local/openresty/nginx/conf/nginx.conf /opt/docker/etc/nginx/nginx.conf; \
     elif [ -n "$(which apk)" ]; then \
       apk add --no-cache nginx-mod-http-lua; \
