@@ -565,7 +565,7 @@ jobs:
         tags: 7.4-alpine-npm-n-ffmpeg
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.base
+        dockerfile: Dockerfile.build-dir
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
