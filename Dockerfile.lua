@@ -9,8 +9,7 @@ RUN set -x \
     && if [ -n "$(which apt)" ]; then \
       mv /etc/nginx /etc/nginx_bak; \
       apt remove -y nginx; \
-      if [ -n "$(which nginx)" ];then \
-        # 卸载没成功
+      if [ -n "$(which nginx)" ]; then \
         apt autoremove -y ;\
       fi \
       apt-get update; \ 
