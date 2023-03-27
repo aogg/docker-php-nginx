@@ -37,6 +37,28 @@ jobs:
 
 # ----------------base基础start---------------------
 
+    - name: 7.2-base
+      uses: docker/build-push-action@v1.1.0
+      with:
+        # Username used to log in to a Docker registry. If not set then no login will occur
+        username: adockero
+        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
+        password: ${{ secrets.PASSWORD }}
+        # Docker repository to tag the image with
+        repository: adockero/php-nginx
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags: 7.2
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        # path: ./dockerfile
+        dockerfile: Dockerfile.base
+        # Always attempt to pull a newer version of the image
+        always_pull: true
+        # Comma-delimited list of build-time variables
+        build_args: FROM_ARG=webdevops/php-nginx:7.2
+        # Adds labels with git repository information to the built image
+        add_git_labels: true
+
+
     - name: 7.2-alpine
       uses: docker/build-push-action@v1.1.0
       with:
@@ -114,6 +136,7 @@ jobs:
 
 
 
+
     - name: 7.2-lua
       uses: docker/build-push-action@v1.1.0
       with:
@@ -134,6 +157,7 @@ jobs:
         build_args: TAG=php-nginx:7.2
         # Adds labels with git repository information to the built image
         add_git_labels: true
+
 
 
 
