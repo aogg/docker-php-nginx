@@ -11,7 +11,7 @@ RUN set -x \
       apt remove -y nginx; \
       if [ -n "$(which nginx)" ]; then \
         apt autoremove -y ;\
-      fi \
+      fi; \
       apt-get update; \ 
       wget -O - https://openresty.org/package/pubkey.gpg | apt-key add -; \
       codename=`grep -Po 'VERSION="[0-9]+ \(\K[^)]+' /etc/os-release`;\
