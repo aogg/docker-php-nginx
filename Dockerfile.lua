@@ -8,6 +8,7 @@ FROM adockero/${TAG}
 RUN set -x \
     && if [ -n "$(which apt)" ]; then \
       mv /etc/nginx /etc/nginx_bak; \
+      mv /usr/share/nginx/ /usr/share/nginx_bak/; \
       apt remove -y nginx; \
       if [ -n "$(which nginx)" ]; then \
         apt autoremove -y ;\
@@ -20,7 +21,9 @@ RUN set -x \
       apt-get update; \ 
       apt-get install -y --no-install-recommends openresty; \     
       rm -Rf /etc/nginx; \
+      rm -Rf /usr/share/nginx/;\  
       mv /etc/nginx_bak /etc/nginx; \
+      mv /usr/share/nginx_bak/ /usr/share/nginx/; \
       rm -rf /var/lib/apt/lists/*; \
       ln -s -f /usr/local/openresty/nginx/sbin/nginx /usr/sbin/nginx; \
       ln -s /usr/local/openresty/nginx/conf/nginx.conf /opt/docker/etc/nginx/nginx.conf; \
