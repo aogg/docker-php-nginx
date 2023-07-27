@@ -35,6 +35,7 @@ jobs:
         username: adockero
         password: ${{ secrets.PASSWORD }}
 
+# 已全改
     -
       name: 登录阿里镜像
       uses: docker/login-action@v2
@@ -67,94 +68,85 @@ jobs:
         # Adds labels with git repository information to the built image
         labels: true
 
-    - name: 7.1-base
-      uses: docker/build-push-action@v1.1.0
-      with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        username: adockero
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.PASSWORD }}
-        # Docker repository to tag the image with
-        repository: adockero/php-nginx
-        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.1
-        # Path to the Dockerfile (Default is '{path}/Dockerfile')
-        # path: ./dockerfile
-        dockerfile: Dockerfile.base
-        # Always attempt to pull a newer version of the image
-        always_pull: true
-        # Comma-delimited list of build-time variables
-        build_args: FROM_ARG=webdevops/php-nginx:7.1
-        # Adds labels with git repository information to the built image
-        add_git_labels: true
 
-
+    # - name: 7.1-base
+    #   uses: docker/build-push-action@v1.1.0
+    #   with:
+    #     # Username used to log in to a Docker registry. If not set then no login will occur
+    #     username: adockero
+    #     # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
+    #     password: ${{ secrets.PASSWORD }}
+    #     # Docker repository to tag the image with
+    #     repository: adockero/php-nginx
+    #     # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+    #     tags: 7.1
+    #     # Path to the Dockerfile (Default is '{path}/Dockerfile')
+    #     # path: ./dockerfile
+    #     dockerfile: Dockerfile.base
+    #     # Always attempt to pull a newer version of the image
+    #     always_pull: true
+    #     # Comma-delimited list of build-time variables
+    #     build_args: FROM_ARG=webdevops/php-nginx:7.1
+    #     # Adds labels with git repository information to the built image
+    #     add_git_labels: true
 
     - name: 7.1-dev
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v3
       with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        username: adockero
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.PASSWORD }}
-        # Docker repository to tag the image with
-        repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.1-dev
+        tags:  |
+            adockero/php-nginx:7.1-dev
+            registry.cn-hangzhou.aliyuncs.com/adockero/php-nginx:7.1-dev
+        pull: true
+        push: true
+        context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.base
-        # Always attempt to pull a newer version of the image
-        always_pull: true
+        file: Dockerfile.base
         # Comma-delimited list of build-time variables
-        build_args: FROM_ARG=webdevops/php-nginx-dev:7.1
+        build-args: FROM_ARG=webdevops/php-nginx-dev:7.1
         # Adds labels with git repository information to the built image
-        add_git_labels: true
+        labels: true
 
 
     - name: 7.1-alpine
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v3
       with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        username: adockero
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.PASSWORD }}
-        # Docker repository to tag the image with
-        repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.1-alpine
+        tags:  |
+            adockero/php-nginx:7.1-alpine
+            registry.cn-hangzhou.aliyuncs.com/adockero/php-nginx:7.1-alpine
+        pull: true
+        push: true
+        context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.base
-        # Always attempt to pull a newer version of the image
-        always_pull: true
+        file: Dockerfile.base
         # Comma-delimited list of build-time variables
-        build_args: FROM_ARG=webdevops/php-nginx:7.1-alpine
+        build-args: FROM_ARG=webdevops/php-nginx:7.1-alpine
         # Adds labels with git repository information to the built image
-        add_git_labels: true
-
+        labels: true
 
 
     - name: 7.1-dev-alpine
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v3
       with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        username: adockero
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.PASSWORD }}
-        # Docker repository to tag the image with
-        repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.1-dev-alpine
+        tags:  |
+            adockero/php-nginx:7.1-dev-alpine
+            registry.cn-hangzhou.aliyuncs.com/adockero/php-nginx:7.1-dev-alpine
+        pull: true
+        push: true
+        context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.base
-        # Always attempt to pull a newer version of the image
-        always_pull: true
+        file: Dockerfile.base
         # Comma-delimited list of build-time variables
-        build_args: FROM_ARG=webdevops/php-nginx-dev:7.1-alpine
+        build-args: FROM_ARG=webdevops/php-nginx-dev:7.1-alpine
         # Adds labels with git repository information to the built image
-        add_git_labels: true
+        labels: true
+
+
 
 # ----------------base基础end---------------------
 
@@ -164,106 +156,84 @@ jobs:
 # ----------------lua  start---------------------
 
 
-
     - name: 7.1-lua-alpine
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v3
       with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        username: adockero
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.PASSWORD }}
-        # Docker repository to tag the image with
-        repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.1-lua-alpine
+        tags:  |
+            adockero/php-nginx:7.1-lua-alpine
+            registry.cn-hangzhou.aliyuncs.com/adockero/php-nginx:7.1-lua-alpine
+        pull: true
+        push: true
+        context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.lua
-        # Always attempt to pull a newer version of the image
-        always_pull: true
+        file: Dockerfile.lua
         # Comma-delimited list of build-time variables
-        build_args: TAG=php-nginx:7.1-alpine
+        build-args: TAG=php-nginx:7.1-alpine
         # Adds labels with git repository information to the built image
-        add_git_labels: true
-
-
+        labels: true
 
 
 
     - name: 7.1-lua
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v3
       with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        username: adockero
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.PASSWORD }}
-        # Docker repository to tag the image with
-        repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.1-lua
+        tags:  |
+            adockero/php-nginx:7.1-lua
+            registry.cn-hangzhou.aliyuncs.com/adockero/php-nginx:7.1-lua
+        pull: true
+        push: true
+        context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.lua
-        # Always attempt to pull a newer version of the image
-        always_pull: true
+        file: Dockerfile.lua
         # Comma-delimited list of build-time variables
-        build_args: TAG=php-nginx:7.1
+        build-args: TAG=php-nginx:7.1
         # Adds labels with git repository information to the built image
-        add_git_labels: true
-
-
-
+        labels: true
 
 
     - name: 7.1-dev-lua-alpine
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v3
       with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        username: adockero
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.PASSWORD }}
-        # Docker repository to tag the image with
-        repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.1-dev-lua-alpine
+        tags:  |
+            adockero/php-nginx:7.1-dev-lua-alpine
+            registry.cn-hangzhou.aliyuncs.com/adockero/php-nginx:7.1-dev-lua-alpine
+        pull: true
+        push: true
+        context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.lua
-        # Always attempt to pull a newer version of the image
-        always_pull: true
+        file: Dockerfile.lua
         # Comma-delimited list of build-time variables
-        build_args: TAG=php-nginx:7.1-dev-alpine
+        build-args: TAG=php-nginx:7.1-dev-alpine
         # Adds labels with git repository information to the built image
-        add_git_labels: true
-
-
-
-
-
-
-
+        labels: true
 
 
     - name: 7.1-dev-lua
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v3
       with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        username: adockero
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.PASSWORD }}
-        # Docker repository to tag the image with
-        repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.1-dev-lua
+        tags:  |
+            adockero/php-nginx:7.1-dev-lua
+            registry.cn-hangzhou.aliyuncs.com/adockero/php-nginx:7.1-dev-lua
+        pull: true
+        push: true
+        context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.lua
-        # Always attempt to pull a newer version of the image
-        always_pull: true
+        file: Dockerfile.lua
         # Comma-delimited list of build-time variables
-        build_args: TAG=php-nginx:7.1-dev
+        build-args: TAG=php-nginx:7.1-dev
         # Adds labels with git repository information to the built image
-        add_git_labels: true
+        labels: true
+
+
+
 
 
 # ----------------lua基础---------------------
@@ -271,98 +241,85 @@ jobs:
 
 
 
-
     - name: 7.1-lua-host-dir
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v3
       with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        username: adockero
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.PASSWORD }}
-        # Docker repository to tag the image with
-        repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.1-lua-host-dir
+        tags:  |
+            adockero/php-nginx:7.1-lua-host-dir
+            registry.cn-hangzhou.aliyuncs.com/adockero/php-nginx:7.1-lua-host-dir
+        pull: true
+        push: true
+        context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.lua-host-dir
-        # Always attempt to pull a newer version of the image
-        always_pull: true
+        file: Dockerfile.lua-host-dir
         # Comma-delimited list of build-time variables
-        build_args: TAG=7.1-lua
+        build-args: TAG=7.1-lua
         # Adds labels with git repository information to the built image
-        add_git_labels: true
-
+        labels: true
 
 
     - name: 7.1-dev-lua-host-dir
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v3
       with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        username: adockero
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.PASSWORD }}
-        # Docker repository to tag the image with
-        repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.1-dev-lua-host-dir
+        tags:  |
+            adockero/php-nginx:7.1-dev-lua-host-dir
+            registry.cn-hangzhou.aliyuncs.com/adockero/php-nginx:7.1-dev-lua-host-dir
+        pull: true
+        push: true
+        context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.lua-host-dir
-        # Always attempt to pull a newer version of the image
-        always_pull: true
+        file: Dockerfile.lua-host-dir
         # Comma-delimited list of build-time variables
-        build_args: TAG=7.1-dev-lua
+        build-args: TAG=7.1-dev-lua
         # Adds labels with git repository information to the built image
-        add_git_labels: true
+        labels: true
 
 
 
     - name: 7.1-thinkphp6
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v3
       with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        username: adockero
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.PASSWORD }}
-        # Docker repository to tag the image with
-        repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.1-thinkphp6
+        tags:  |
+            adockero/php-nginx:7.1-thinkphp6
+            registry.cn-hangzhou.aliyuncs.com/adockero/php-nginx:7.1-thinkphp6
+        pull: true
+        push: true
+        context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.thinkphp
-        # Always attempt to pull a newer version of the image
-        always_pull: true
+        file: Dockerfile.thinkphp
         # Comma-delimited list of build-time variables
-        # build_args: FROM_ARG=adockero/php-nginx:5.6-mysql
+        # build-args: TAG=7.1-dev-lua
         # Adds labels with git repository information to the built image
-        add_git_labels: true
-
-
+        labels: true
 
 
 
     - name: 7.1-git-auto
-      uses: docker/build-push-action@v1.1.0
+      uses: docker/build-push-action@v3
       with:
-        # Username used to log in to a Docker registry. If not set then no login will occur
-        username: adockero
-        # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-        password: ${{ secrets.PASSWORD }}
-        # Docker repository to tag the image with
-        repository: adockero/php-nginx
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: 7.1-git-auto
+        tags:  |
+            adockero/php-nginx:7.1-git-auto
+            registry.cn-hangzhou.aliyuncs.com/adockero/php-nginx:7.1-git-auto
+        pull: true
+        push: true
+        context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        dockerfile: Dockerfile.git-auto
-        # Always attempt to pull a newer version of the image
-        always_pull: true
+        file: Dockerfile.git-auto
         # Comma-delimited list of build-time variables
-        # build_args: arg1=value1,arg2=value2
+        # build-args: TAG=7.1-dev-lua
         # Adds labels with git repository information to the built image
-        add_git_labels: true
+        labels: true
+
+
+
 
 
 
