@@ -43,7 +43,7 @@ jobs:
       with:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags:  |
-            php-nginx:7.4-php-dev-not-ssh
+          adockero/php-nginx:7.4-php-dev-not-ssh
         pull: true
         push: false
         context: ./
@@ -62,14 +62,14 @@ jobs:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags:  |
             adockero/php-nginx:7.4-php-dev
-        # pull: false
+        pull: false
         push: true
         context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
         file: Dockerfile.sshd
         # Comma-delimited list of build-time variables
-        build-args: FROM_ARG=php-nginx:7.4-php-dev
+        build-args: FROM_ARG=adockero/php-nginx:7.4-php-dev-not-ssh
         # Adds labels with git repository information to the built image
         labels: true
     # - name: 7.4-php-dev
