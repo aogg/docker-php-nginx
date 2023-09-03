@@ -38,7 +38,7 @@ jobs:
 
 
 
-# ---------------只有php的---start---------------------
+# ---------------正式---start---------------------
     - name: 7.4-php-alpine
       uses: docker/build-push-action@v1.1.0
       with:
@@ -80,7 +80,7 @@ jobs:
         build_args: FROM_ARG=adockero/php-nginx:7.4-php-alpine
         # Adds labels with git repository information to the built image
         add_git_labels: true
-# ---------------只有php的---end---------------------
+# ---------------正式---end---------------------
 
 
 
@@ -111,7 +111,7 @@ jobs:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags:  |
             adockero/php-nginx:7.4-php-dev
-        pull: true
+        pull: false
         push: true
         context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
