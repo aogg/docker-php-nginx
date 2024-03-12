@@ -9,7 +9,7 @@ on:
       - "**"
       - "./*"
       - "!.github/workflows/*.yml"
-      - ".github/workflows/docker-8.yml"
+      - ".github/workflows/docker-8.1.yml"
 
 jobs:
   setup-build-publish:
