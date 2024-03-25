@@ -25,7 +25,7 @@ RUN set -x \
       rm -rf /var/lib/apt/lists/*; \
       ln -s -f /usr/local/openresty/nginx/sbin/nginx /usr/sbin/nginx; \
       ln -s /usr/local/openresty/nginx/conf/nginx.conf /opt/docker/etc/nginx/nginx.conf; \
-      sed -i '/ssl\s*on;/d' /opt/docker/etc/nginx/vhost.ssl.conf \
+      sed -i '/ssl\s*on;/d' /opt/docker/etc/nginx/vhost.ssl.conf; \
     elif [ -n "$(which apk)" ]; then \
       apk add --no-cache nginx-mod-http-lua; \
     fi
