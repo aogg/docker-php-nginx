@@ -12,13 +12,12 @@ COPY ./service.d/supervisor.d/run-eval-env.sh /opt/docker/bin/service.d/supervis
 COPY ./service.d/supervisor.d/local-user.sh /opt/docker/bin/service.d/supervisor.d/local-user.sh
 
 
-COPY ./provision-build.d/ /opt/docker/provision/local-build.d
+COPY ./provision-build.d/timezonedb.sh /opt/docker/provision/local-build.d/timezonedb.sh
 COPY ./script/docker-build-dir.sh /opt/docker/bin/usr-bin/docker-build-dir.sh
 
 # 
 ARG BUILD_SCRIPT_ARG=''
-RUN bash /opt/docker/bin/usr-bin/docker-build-dir.sh /opt/docker/provision/local-build.d ${BUILD_SCRIPT_ARG} \
-    && pecl install timezonedb
+RUN bash /opt/docker/bin/usr-bin/docker-build-dir.sh /opt/docker/provision/local-build.d timezonedb;${BUILD_SCRIPT_ARG}
 
 
 ONBUILD ARG BUILD_SCRIPT_ARG=''
