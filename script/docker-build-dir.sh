@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 运行$1目录下的多个脚本
-
+# 需要第二个参数存在才能运行
 if [ -z "$2" ]; then
     exit;
 fi
@@ -14,7 +14,9 @@ cd $dirPath;
 
 for i in ${buildArgArr[@]}
 do
-    . $i
+    if [[ -n "$i" && -f "$i" ]];then
+        . $i
+    fi
 done    
 
 
