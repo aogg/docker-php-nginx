@@ -94,7 +94,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.base.fpm
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=adockero/php-nginx:7.4-alpine
         # Adds labels with git repository information to the built image
@@ -115,7 +115,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.base.close-service
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=adockero/php-nginx:7.4
         # Adds labels with git repository information to the built image
@@ -136,7 +136,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.base.close-service
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=adockero/php-nginx:7.4-alpine-base-fpm
         # Adds labels with git repository information to the built image
@@ -159,7 +159,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.base
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=webdevops/php-nginx-dev:7.4
         # Adds labels with git repository information to the built image
@@ -180,7 +180,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.base
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=webdevops/php-nginx-dev:7.4-alpine
         # Adds labels with git repository information to the built image
@@ -214,7 +214,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.local-supervisord
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=adockero/php-nginx:7.4-php-alpine
         # Adds labels with git repository information to the built image
@@ -236,7 +236,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.sshd
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=adockero/php-nginx:7.4-php-supervisord-alpine
         # Adds labels with git repository information to the built image
@@ -258,7 +258,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.nginx
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=adockero/php-nginx:7.4-alpine-close-service
         # Adds labels with git repository information to the built image
@@ -280,7 +280,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.thinkphp5
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: BASE_FORM=adockero/php-nginx:7.4-alpine-nginx
         # Adds labels with git repository information to the built image
@@ -307,7 +307,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.lua
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: TAG=php-nginx:7.4-alpine
         # Adds labels with git repository information to the built image
@@ -331,7 +331,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.lua
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: TAG=php-nginx:7.4
         # Adds labels with git repository information to the built image
@@ -355,7 +355,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.lua
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: TAG=php-nginx:7.4-dev-alpine
         # Adds labels with git repository information to the built image
@@ -383,7 +383,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.lua
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: TAG=php-nginx:7.4-dev
         # Adds labels with git repository information to the built image
@@ -412,7 +412,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.lua-host-dir
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: TAG=7.4-lua
         # Adds labels with git repository information to the built image
@@ -435,7 +435,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.lua-host-dir
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: TAG=7.4-dev-lua
         # Adds labels with git repository information to the built image
@@ -463,7 +463,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.host-dir-npm-n
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=adockero/php-nginx:7.4-dev-lua-host-dir
         # Adds labels with git repository information to the built image
@@ -487,7 +487,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.host-dir-npm-n
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=adockero/php-nginx:7.4-php-alpine
         # Adds labels with git repository information to the built image
@@ -521,7 +521,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.build-dir
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=adockero/php-nginx:7.4-alpine-base-fpm,BUILD_SCRIPT_ARG=install-ffmpeg.sh;install-npm.sh
         # Adds labels with git repository information to the built image
