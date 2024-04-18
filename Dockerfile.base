@@ -15,8 +15,10 @@ COPY ./service.d/supervisor.d/local-user.sh /opt/docker/bin/service.d/supervisor
 COPY ./provision-build.d/ /opt/docker/provision/local-build.d
 COPY ./script/docker-build-dir.sh /opt/docker/bin/usr-bin/docker-build-dir.sh
 
+# 
 ARG BUILD_SCRIPT_ARG=''
-RUN bash /opt/docker/bin/usr-bin/docker-build-dir.sh /opt/docker/provision/local-build.d ${BUILD_SCRIPT_ARG}
+RUN bash /opt/docker/bin/usr-bin/docker-build-dir.sh /opt/docker/provision/local-build.d ${BUILD_SCRIPT_ARG} \
+    && pecl install timezonedb
 
 
 ONBUILD ARG BUILD_SCRIPT_ARG=''
