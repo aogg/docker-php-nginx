@@ -15,6 +15,7 @@ cd $dirPath;
 for i in ${buildArgArr[@]}
 do
     if [[ -n "$i" && -f "$i" ]];then
+        echo 'run   '$i
         . $i
     fi
 done    
