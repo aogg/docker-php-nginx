@@ -259,7 +259,7 @@ jobs:
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: TAG=7.2-lua
+        build_args: FROM_ARG=adockero/php-nginx:7.2-lua
         # Adds labels with git repository information to the built image
         add_git_labels: true
 
@@ -282,7 +282,7 @@ jobs:
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: TAG=7.2-dev-lua
+        build_args: FROM_ARG=adockero/php-nginx:7.2-dev-lua
         # Adds labels with git repository information to the built image
         add_git_labels: true
 

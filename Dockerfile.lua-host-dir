@@ -1,11 +1,15 @@
-ARG TAG=latest
+# ARG TAG=latest
+ARG FROM_ARG=adockero/php-nginx:latest
 #FROM webdevops/php:${TAG}
-FROM adockero/php-nginx:${TAG}
+
+# FROM adockero/php-nginx:${TAG}
+
+FROM $FROM_ARG
 
 COPY ./nginx-conf.d/lua.host.dir.conf /etc/nginx/conf.d/lua.host.dir.conf
 COPY ./nginx-conf.d/11-location-thinkphp.conf /opt/docker/etc/nginx/vhost.framework.d/11-location-thinkphp.conf
 COPY ./nginx-conf.d/11-location-thinkphp5.conf /opt/docker/etc/nginx/vhost.framework.d/11-location-thinkphp5.conf
-COPY ./nginx-conf.d/10-php-server_name_host.conf /opt/docker/etc/nginx/vhost.common.d/10-php.conf
+COPY ./nginx-conf.d/10-php.conf /opt/docker/etc/nginx/vhost.common.d/10-php.conf
 
 
 
