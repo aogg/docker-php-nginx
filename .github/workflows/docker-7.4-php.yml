@@ -39,6 +39,42 @@ jobs:
 
 # ---------------dev---start---------------------
 
+
+    - name: 7.4-alpine-php-dev-not-ssh
+      uses: docker/build-push-action@v3
+      with:
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags:  |
+          adockero/php-nginx:7.4-alpine-php-dev-not-ssh
+        # pull: true
+        # push: false
+        context: ./
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        # path: ./dockerfile
+        file: Dockerfile.base
+        # Comma-delimited list of build-time variables
+        build-args: FROM_ARG=webdevops/php-dev:7.4-alpine
+        # Adds labels with git repository information to the built image
+        labels: true
+
+                
+    - name: 7.4-alpine-php-dev
+      uses: docker/build-push-action@v3
+      with:
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags:  |
+            adockero/php-nginx:7.4-alpine-php-dev
+        # pull: false
+        # push: true
+        context: ./
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        # path: ./dockerfile
+        file: Dockerfile.sshd
+        # Comma-delimited list of build-time variables
+        build-args: FROM_ARG=adockero/php-nginx:7.4-alpine-php-dev-not-ssh
+        # Adds labels with git repository information to the built image
+        labels: true
+
     - name: 7.4-php-dev-not-ssh
       uses: docker/build-push-action@v3
       with:
