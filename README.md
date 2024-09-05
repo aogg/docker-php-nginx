@@ -58,3 +58,21 @@ adockero/php-nginx:7.2-dev-lua-host-dir
 ```
 
 
+
+
+# lua-host-dir本地调试
+```
+
+docker build -f ./Dockerfile.lua-host-dir -t my:php-debug --build-arg FROM_ARG=adockero/php-nginx:7.4-dev-lua \
+--build-arg HTTP_PROXY=http://192.168.137.1:8899 --build-arg HTTPS_PROXY=http://192.168.137.1:8899 .
+
+docker run -it --privileged --name debug-php --entrypoint /bin/bash -v /tmp:/hostTmp -v /Applications/code/www/:/app/ --rm my:php-debug -c "/entrypoint supervisord"
+
+
+
+docker exec -it debug-php bash
+
+
+ls -al /opt/docker/etc/nginx/vhost.common.d/
+
+```
