@@ -30,7 +30,7 @@ RUN set -x \
       ln -s /usr/local/openresty/nginx/conf/nginx.conf /opt/docker/etc/nginx/nginx.conf; \
       sed -i '/ssl\s*on;/d' /opt/docker/etc/nginx/vhost.ssl.conf; \
     elif [ -n "$(which apk)" ]; then \
-      echo 'apk安装';\
+      echo 'apk安装，不太行，无法set_by_lua';\
       apk add --no-cache nginx-mod-http-lua; \
       if [ -z "$(id application 2> /dev/null)" ];then echo '不存在application用户';adduser --disabled-password --no-create-home --gecos "" application;fi;\
       echo 'apk结束'; \

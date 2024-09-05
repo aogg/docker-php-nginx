@@ -36,22 +36,22 @@ jobs:
 
 # ---------------alpine---start---------------------
 
-    - name: nginx-alpine-lua
-      uses: docker/build-push-action@v3
-      with:
-        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags:  |
-          adockero/php-nginx:nginx-alpine-lua
-        # pull: true
-        push: true
-        context: ./
-        # Path to the Dockerfile (Default is '{path}/Dockerfile')
-        # path: ./dockerfile
-        file: Dockerfile.lua
-        # Comma-delimited list of build-time variables
-        build-args: FROM_ARG=webdevops/nginx:alpine
-        # Adds labels with git repository information to the built image
-        labels: true
+    # - name: nginx-alpine-lua
+    #   uses: docker/build-push-action@v3
+    #   with:
+    #     # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+    #     tags:  |
+    #       adockero/php-nginx:nginx-alpine-lua
+    #     # pull: true
+    #     push: true
+    #     context: ./
+    #     # Path to the Dockerfile (Default is '{path}/Dockerfile')
+    #     # path: ./dockerfile
+    #     file: Dockerfile.lua
+    #     # Comma-delimited list of build-time variables
+    #     build-args: FROM_ARG=webdevops/nginx:alpine
+    #     # Adds labels with git repository information to the built image
+    #     labels: true
 
 
 
@@ -67,9 +67,9 @@ jobs:
         context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        file: Dockerfile.lua-host-dir
+        file: ./openresty/Dockerfile.lua-host-dir
         # Comma-delimited list of build-time variables
-        build-args: FROM_ARG=adockero/php-nginx:nginx-alpine-lua
+        # build-args: FROM_ARG=adockero/php-nginx:nginx-alpine-lua
         # Adds labels with git repository information to the built image
         labels: true
         
