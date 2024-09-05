@@ -38,12 +38,12 @@ jobs:
 
 # ---------------lua---start---------------------
 
-    - name: nginx-ubuntu-lua
+    - name: nginx-debian-lua
       uses: docker/build-push-action@v3
       with:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags:  |
-          adockero/php-nginx:nginx-ubuntu-lua
+          adockero/php-nginx:nginx-debian-lua
         # pull: true
         # push: false
         context: ./
@@ -51,18 +51,18 @@ jobs:
         # path: ./dockerfile
         file: Dockerfile.lua
         # Comma-delimited list of build-time variables
-        build-args: FROM_ARG=webdevops/nginx:ubuntu-18.04
+        build-args: FROM_ARG=webdevops/nginx:debian-10
         # Adds labels with git repository information to the built image
         labels: true
 
 
 
-    - name: nginx-ubuntu-lua-host-dir
+    - name: nginx-debian-lua-host-dir
       uses: docker/build-push-action@v3
       with:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags:  |
-          adockero/php-nginx:nginx-ubuntu-lua-host-dir
+          adockero/php-nginx:nginx-debian-lua-host-dir
         # pull: true
         # push: false
         context: ./
@@ -70,7 +70,7 @@ jobs:
         # path: ./dockerfile
         file: Dockerfile.lua-host-dir
         # Comma-delimited list of build-time variables
-        build-args: FROM_ARG=adockero/php-nginx:nginx-ubuntu-lua
+        build-args: FROM_ARG=adockero/php-nginx:nginx-debian-lua
         # Adds labels with git repository information to the built image
         labels: true
         
