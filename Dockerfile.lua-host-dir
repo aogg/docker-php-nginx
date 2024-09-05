@@ -9,8 +9,10 @@ FROM $FROM_ARG
 COPY ./nginx-conf.d/lua.host.dir.conf /etc/nginx/conf.d/lua.host.dir.conf
 COPY ./nginx-conf.d/11-location-thinkphp.conf /opt/docker/etc/nginx/vhost.framework.d/11-location-thinkphp.conf
 COPY ./nginx-conf.d/11-location-thinkphp5.conf /opt/docker/etc/nginx/vhost.framework.d/11-location-thinkphp5.conf
-COPY ./nginx-conf.d/10-php.conf /opt/docker/etc/nginx/vhost.common.d/10-php.conf
+COPY ./nginx-conf.d/13-php-var.conf /opt/docker/etc/nginx/vhost.common.d/13-php-var.conf
 
 
 
 COPY ./service.d/ssh.d/11-open-ssh-pwd.sh /opt/docker/bin/service.d/ssh.d/11-open-ssh-pwd.sh
+
+RUN rm /opt/docker/etc/nginx/vhost.common.d/10-php.conf
