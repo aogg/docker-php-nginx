@@ -7,6 +7,7 @@ FROM ${FROM_ARG}
 # 原有是最新nginx版本的
 RUN set -x \
     && if [ -n "$(which apt)" ]; then \
+      echo 'apt安装';\
       rm -Rf /etc/nginx/modules-enabled/*;\
       mv /etc/nginx /etc/nginx_bak; \
       apt remove -y nginx; \
@@ -27,6 +28,7 @@ RUN set -x \
       ln -s /usr/local/openresty/nginx/conf/nginx.conf /opt/docker/etc/nginx/nginx.conf; \
       sed -i '/ssl\s*on;/d' /opt/docker/etc/nginx/vhost.ssl.conf; \
     elif [ -n "$(which apk)" ]; then \
+      echo 'apk安装';\
       apk add --no-cache nginx-mod-http-lua; \
     fi
 
