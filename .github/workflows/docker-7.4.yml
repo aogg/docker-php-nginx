@@ -309,7 +309,7 @@ jobs:
         # Always attempt to pull a newer version of the image
         # always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: TAG=php-nginx:7.4-alpine
+        build_args: FROM_ARG=adockero/php-nginx:7.4-alpine
         # Adds labels with git repository information to the built image
         add_git_labels: true
 
@@ -333,7 +333,7 @@ jobs:
         # Always attempt to pull a newer version of the image
         # always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: TAG=php-nginx:7.4
+        build_args: FROM_ARG=adockero/php-nginx:7.4
         # Adds labels with git repository information to the built image
         add_git_labels: true
 
@@ -357,7 +357,7 @@ jobs:
         # Always attempt to pull a newer version of the image
         # always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: TAG=php-nginx:7.4-dev-alpine
+        build_args: FROM_ARG=adockero/php-nginx:7.4-dev-alpine
         # Adds labels with git repository information to the built image
         add_git_labels: true
 
@@ -385,7 +385,7 @@ jobs:
         # Always attempt to pull a newer version of the image
         # always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: TAG=php-nginx:7.4-dev
+        build_args: FROM_ARG=adockero/php-nginx:7.4-dev
         # Adds labels with git repository information to the built image
         add_git_labels: true
 

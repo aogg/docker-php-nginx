@@ -1,6 +1,6 @@
-ARG TAG="php-nginx:latest"
+ARG FROM_ARG="adockero/php-nginx:latest"
 #FROM webdevops/php:${TAG}
-FROM adockero/${TAG}
+FROM ${FROM_ARG}
 
 
 # docker-image-info dist-codename

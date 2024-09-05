@@ -44,8 +44,8 @@ jobs:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags:  |
           adockero/php-nginx:7.4-php-dev-not-ssh
-        pull: true
-        push: false
+        # pull: true
+        # push: false
         context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
@@ -62,8 +62,8 @@ jobs:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags:  |
             adockero/php-nginx:7.4-php-dev
-        pull: false
-        push: true
+        # pull: false
+        # push: true
         context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
@@ -117,7 +117,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.base
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=webdevops/php:7.4-alpine
         # Adds labels with git repository information to the built image
@@ -138,7 +138,7 @@ jobs:
         # path: ./dockerfile
         dockerfile: Dockerfile.base.close-service
         # Always attempt to pull a newer version of the image
-        always_pull: true
+        # always_pull: true
         # Comma-delimited list of build-time variables
         build_args: FROM_ARG=adockero/php-nginx:7.4-php-alpine
         # Adds labels with git repository information to the built image

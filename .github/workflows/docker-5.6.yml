@@ -114,7 +114,7 @@ jobs:
         # Always attempt to pull a newer version of the image
         always_pull: true
         # Comma-delimited list of build-time variables
-        build_args: TAG=php-nginx:5.6-dev
+        build_args: FROM_ARG=adockero/php-nginx:5.6-dev
         # Adds labels with git repository information to the built image
         add_git_labels: true
 
