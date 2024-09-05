@@ -24,7 +24,7 @@ RUN set -x \
       rm -Rf /etc/nginx; \
       mv /etc/nginx_bak /etc/nginx; \
       rm -rf /var/lib/apt/lists/*; \
-      rm -Rf /var/log; \
+      rm -f /var/log/*.log; \
       if [ -z "$(id application 2> /dev/null)" ];then echo '不存在application用户';adduser --disabled-password --no-create-home --gecos "" application;fi;\
       ln -s -f /usr/local/openresty/nginx/sbin/nginx /usr/sbin/nginx; \
       ln -s /usr/local/openresty/nginx/conf/nginx.conf /opt/docker/etc/nginx/nginx.conf; \
