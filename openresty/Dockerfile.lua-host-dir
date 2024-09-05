@@ -1,0 +1,24 @@
+FROM openresty/openresty:alpine
+
+
+ENV SERVICE_NGINX_CLIENT_MAX_BODY_SIZE 1G
+ENV DOCUMENT_INDEX 'index.php'
+
+
+COPY ./nginx-conf.d/lua.host.dir.conf /etc/nginx/conf.d/lua.host.dir.conf
+COPY ./nginx-conf.d/11*.conf /opt/docker/etc/nginx/vhost.framework.d/
+COPY ./nginx-conf.d/12*.conf /opt/docker/etc/nginx/vhost.framework.d/
+COPY ./nginx-conf.d/10*.conf /opt/docker/etc/nginx/vhost.framework.d/
+
+COPY ./nginx-conf.d/vhost.common.d/02-dev.conf /opt/docker/etc/nginx/vhost.common.d/02-dev.conf
+COPY ./nginx-conf.d/vhost.common.d/10-general.conf /opt/docker/etc/nginx/vhost.common.d/10-general.conf
+COPY ./nginx-conf.d/vhost.common.d/10-location-root.conf /opt/docker/etc/nginx/vhost.common.d/10-location-root.conf
+# COPY ./nginx-conf.d/vhost.common.d/10-php.conf /opt/docker/etc/nginx/vhost.common.d/10-php.conf
+COPY ./nginx-conf.d/13-php-var.conf /opt/docker/etc/nginx/vhost.common.d/13-php-var.conf
+
+
+
+COPY ./openresty/docker-entrypoint.sh /docker-entrypoint.sh
+
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
+CMD [ "" ]
