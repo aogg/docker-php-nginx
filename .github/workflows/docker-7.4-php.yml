@@ -48,6 +48,7 @@ jobs:
           adockero/php-nginx:7.4-alpine-php-dev-not-ssh
         # pull: true
         # push: false
+        push: true
         context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
@@ -66,6 +67,7 @@ jobs:
             adockero/php-nginx:7.4-alpine-php-dev
         # pull: false
         # push: true
+        push: true
         context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
@@ -83,6 +85,7 @@ jobs:
           adockero/php-nginx:7.4-php-dev-not-ssh
         # pull: true
         # push: false
+        push: true
         context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
@@ -101,6 +104,7 @@ jobs:
             adockero/php-nginx:7.4-php-dev
         # pull: false
         # push: true
+        push: true
         context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
