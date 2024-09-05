@@ -45,7 +45,7 @@ jobs:
         tags:  |
           adockero/php-nginx:nginx-debian-lua
         # pull: true
-        # push: false
+        push: true
         context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
@@ -65,6 +65,7 @@ jobs:
           adockero/php-nginx:nginx-debian-lua-host-dir
         # pull: true
         # push: false
+        push: true
         context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
