@@ -32,6 +32,8 @@ RUN set -x \
     elif [ -n "$(which apk)" ]; then \
       echo 'apk安装';\
       apk add --no-cache nginx-mod-http-lua; \
+      if [ -z "$(id application 2> /dev/null)" ];then echo '不存在application用户';adduser --disabled-password --no-create-home --gecos "" application;fi;\
+      echo 'apk结束';
     fi
 
 
