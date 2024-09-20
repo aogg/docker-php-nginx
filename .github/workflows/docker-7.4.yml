@@ -9,6 +9,7 @@ on:
       - "**"
       - "./*"
       - "!openresty/**"
+      - "!other/**"
       - "!.github/workflows/*.yml"
       - ".github/workflows/docker-7.4.yml"
 
