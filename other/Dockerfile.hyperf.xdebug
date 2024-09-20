@@ -1,0 +1,11 @@
+ARG FROM_ARG="hyperf/hyperf:8.3-alpine-v3.19-swoole"
+
+FROM $FROM_ARG
+
+# ARG APK_ARG
+ARG PHP_BUILD_VERSION
+
+RUN apk add --no-cache php${PHP_BUILD_VERSION}-xdebug \
+    && echo "zend_extension=xdebug.so" > /etc/php${PHP_BUILD_VERSION}/conf.d/50_xdebug.ini \
+    && rm -rf /var/cache/apk/* \
+    && php --ri xdebug
