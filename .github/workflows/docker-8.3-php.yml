@@ -98,6 +98,27 @@ jobs:
         # Adds labels with git repository information to the built image
         labels: true
 
+                
+    - name: 8.3-alpine-php-dev-ffmpeg
+      uses: docker/build-push-action@v3
+      with:
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags:  |
+            adockero/php-nginx:8.3-alpine-php-dev
+        # pull: false
+        # push: true
+        push: true
+        context: ./
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        # path: ./dockerfile
+        file: Dockerfile.sshd
+        # Comma-delimited list of build-time variables
+        build-args: |
+          FROM_ARG=adockero/php-nginx:8.3-alpine-php-dev-not-ssh-fpm
+          BUILD_SCRIPT_ARG=install-ffmpeg.sh
+        # Adds labels with git repository information to the built image
+        labels: true
+
 # ---------------dev--alpine---end---------------------
 
 # ---------------dev--ubuntu---start---------------------
