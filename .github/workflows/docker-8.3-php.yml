@@ -123,6 +123,84 @@ jobs:
 
 # ---------------dev--ubuntu---start---------------------
 
+
+    - name: 8.3-ubuntu-php-dev-not-ssh
+      uses: docker/build-push-action@v3
+      with:
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags:  |
+          adockero/php-nginx:8.3-ubuntu-php-dev-not-ssh
+        # pull: true
+        # push: false
+        push: true
+        context: ./
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        # path: ./dockerfile
+        file: Dockerfile.base
+        # Comma-delimited list of build-time variables
+        build-args: FROM_ARG=webdevops/php-dev:8.3
+        # Adds labels with git repository information to the built image
+        labels: true
+
+
+    - name: 8.3-ubuntu-php-dev-not-ssh-fpm
+      uses: docker/build-push-action@v3
+      with:
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags:  |
+            adockero/php-nginx:8.3-ubuntu-php-dev-not-ssh-fpm
+        # pull: false
+        # push: true
+        push: true
+        context: ./
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        # path: ./dockerfile
+        file: Dockerfile.base.fpm
+        # Comma-delimited list of build-time variables
+        build-args: FROM_ARG=adockero/php-nginx:8.3-ubuntu-php-dev-not-ssh
+        # Adds labels with git repository information to the built image
+        labels: true
+
+                
+    - name: 8.3-ubuntu-php-dev
+      uses: docker/build-push-action@v3
+      with:
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags:  |
+            adockero/php-nginx:8.3-ubuntu-php-dev
+        # pull: false
+        # push: true
+        push: true
+        context: ./
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        # path: ./dockerfile
+        file: Dockerfile.sshd
+        # Comma-delimited list of build-time variables
+        build-args: FROM_ARG=adockero/php-nginx:8.3-ubuntu-php-dev-not-ssh-fpm
+        # Adds labels with git repository information to the built image
+        labels: true
+
+                
+    - name: 8.3-ubuntu-php-dev-ffmpeg
+      uses: docker/build-push-action@v3
+      with:
+        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
+        tags:  |
+            adockero/php-nginx:8.3-ubuntu-php-dev-ffmpeg
+        # pull: false
+        # push: true
+        push: true
+        context: ./
+        # Path to the Dockerfile (Default is '{path}/Dockerfile')
+        # path: ./dockerfile
+        file: Dockerfile.build-dir
+        # Comma-delimited list of build-time variables
+        build-args: |
+          FROM_ARG=adockero/php-nginx:8.3-ubuntu-php-dev
+          BUILD_SCRIPT_ARG=install-ffmpeg.sh
+        # Adds labels with git repository information to the built image
+        labels: true
+
     # - name: 7.4-php-dev-not-ssh
     #   uses: docker/build-push-action@v3
     #   with:
