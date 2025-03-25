@@ -104,17 +104,17 @@ jobs:
       with:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags:  |
-            adockero/php-nginx:8.3-alpine-php-dev
+            adockero/php-nginx:8.3-alpine-php-dev-ffmpeg
         # pull: false
         # push: true
         push: true
         context: ./
         # Path to the Dockerfile (Default is '{path}/Dockerfile')
         # path: ./dockerfile
-        file: Dockerfile.sshd
+        file: Dockerfile.build-dir
         # Comma-delimited list of build-time variables
         build-args: |
-          FROM_ARG=adockero/php-nginx:8.3-alpine-php-dev-not-ssh-fpm
+          FROM_ARG=adockero/php-nginx:8.3-alpine-php-dev
           BUILD_SCRIPT_ARG=install-ffmpeg.sh
         # Adds labels with git repository information to the built image
         labels: true
