@@ -6,8 +6,8 @@ apk add --no-cache libstdc++ && \
 
 cd /tmp \
 && pecl download swoole-4.8.13 \
-&& tar -xzf ./swoole-4.8.13.tgz \
-&& cd ./swoole-4.8.13 \
+&& mkdir -p /usr/src/php/ext/swoole \
+&& tar -xzf ./swoole-4.8.13.tgz --strip-components=1 -C /usr/src/php/ext/swoole \
 && docker-php-ext-configure swoole \
         --enable-http2   \
         --enable-mysqlnd \
