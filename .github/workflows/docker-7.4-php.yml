@@ -115,7 +115,9 @@ jobs:
         # path: ./dockerfile
         file: ./docker-build/Dockerfile
         # Comma-delimited list of build-time variables
-        build-args: FROM_ARG=adockero/php-nginx:7.4-alpine-php-dev,RUN_SH_ARG=install-swoole-4.8.sh
+        build-args: |
+          FROM_ARG=adockero/php-nginx:7.4-alpine-php-dev
+          RUN_SH_ARG=install-swoole-4.8.sh
         # Adds labels with git repository information to the built image
         labels: true
 
