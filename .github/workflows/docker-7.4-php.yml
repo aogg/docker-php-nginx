@@ -10,11 +10,13 @@ on:
       - "./*"
       - "!openresty/**"
       - "!other/**"
-      - "!docker-build/**"
       - "./docker-build/script/install-swoole-4.8.sh"
       - "./docker-build/Dockerfile"
       - "!.github/workflows/*.yml"
       - ".github/workflows/docker-7.4-php.yml"
+    paths-ignore:
+      - 'docker-build/**'                           # 排除 docker-build 目录下的其他文件
+
 
 jobs:
   setup-build-publish:
