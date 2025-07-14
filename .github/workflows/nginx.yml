@@ -8,6 +8,7 @@ on:
     paths: 
       - "**"
       - "./*"
+      - "!docker-build/**"
       - "!.github/workflows/*.yml"
       - ".github/workflows/nginx.yml"
 

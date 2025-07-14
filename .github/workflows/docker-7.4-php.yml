@@ -10,6 +10,9 @@ on:
       - "./*"
       - "!openresty/**"
       - "!other/**"
+      - "!docker-build/**"
+      - "./docker-build/script/install-swoole-4.8.sh"
+      - "./docker-build/Dockerfile"
       - "!.github/workflows/*.yml"
       - ".github/workflows/docker-7.4-php.yml"
 

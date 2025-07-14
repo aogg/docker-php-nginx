@@ -10,6 +10,7 @@ on:
       - "./*"
       - "!openresty/**"
       - "!other/**"
+      - "!docker-build/**"
       - "!.github/workflows/*.yml"
       - ".github/workflows/docker-7.1.yml"
 
