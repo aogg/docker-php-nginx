@@ -8,4 +8,7 @@ FROM ${FROM_ARG}
 
 COPY ./docker-build/script /opt/docker/docker-build
 
-RUN bash /opt/docker/docker-build/${RUN_SH_ARG}
+RUN echo "${RUN_SH_ARG}" \
+    && ls -al /opt/docker/docker-build/ \
+    && bash "/opt/docker/docker-build/${RUN_SH_ARG}" \
+    && echo "结束"
