@@ -17,8 +17,11 @@ on:
       - "./provision-build.d/**"
       - "!openresty/**"
       - "!other/**"
+      # swoole
       - "./docker-build/script/install-swoole-4.8.sh"
       - "./docker-build/Dockerfile"
+      # swoole
+      
       - "!.github/workflows/*.yml"
       - ".github/workflows/docker-7.4-php.yml"
 
