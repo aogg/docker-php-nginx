@@ -1,10 +1,10 @@
 ARG FROM_ARG=adockero/php-nginx:7.4-alpine-php-dev
 
-ARG RUN_SH_ARG=install-swoole-4.8.sh
 
 
 FROM ${FROM_ARG}
 
+ARG RUN_SH_ARG=install-swoole-4.8.sh
 
 COPY ./docker-build/script /opt/docker/docker-build
 
