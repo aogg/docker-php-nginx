@@ -111,25 +111,6 @@ jobs:
         # Adds labels with git repository information to the built image
         labels: true
 
-    - name: 7.4-alpine-php-dev-swoole
-      uses: docker/build-push-action@v3
-      with:
-        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags:  |
-            adockero/php-nginx:7.4-alpine-php-dev-swoole
-        # pull: false
-        # push: true
-        push: true
-        context: ./
-        # Path to the Dockerfile (Default is '{path}/Dockerfile')
-        # path: ./dockerfile
-        file: ./docker-build/Dockerfile
-        # Comma-delimited list of build-time variables
-        build-args: |
-          FROM_ARG=adockero/php-nginx:7.4-alpine-php-dev
-          RUN_SH_ARG=install-swoole-4.8.sh install-yasd.sh
-        # Adds labels with git repository information to the built image
-        labels: true
 
 # ---------------dev--alpine---end---------------------
 
