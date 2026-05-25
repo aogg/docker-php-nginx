@@ -47,7 +47,7 @@ jobs:
       with:
         # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
         tags:  |
-          adockero/php-nginx:8.4-alpine-php-dev-not-ssh
+          adockero/php-nginx:8.0-alpine-php-dev-not-ssh
         # pull: true
         # push: false
         push: true
